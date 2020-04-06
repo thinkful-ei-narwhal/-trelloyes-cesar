@@ -13,8 +13,6 @@ class App extends React.Component {
 
   render() {
     const { store } = this.props
-    console.log(store)
-    console.log(store.lists)
     return (
       <main className='App'>
         <header className="App-header">

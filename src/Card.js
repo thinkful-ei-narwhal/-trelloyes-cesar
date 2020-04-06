@@ -1,7 +1,13 @@
 import React from 'react';
 
 function Card(props) {
-  return (<h1>hiii</h1>)
+  return (
+    <div className="Card">
+      <button type="button">delete</button>
+      <h3>{props.title}</h3>
+      <p>{props.content}</p>
+    </div>
+  )
 }
 
 export default Card;
