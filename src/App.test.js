@@ -41,3 +41,25 @@ describe('<Card />', () => {
     expect(tree).toMatchSnapshot();
   });
 });
+
+
+describe('<List />', () => {
+  it('renders without crashing', () => {
+    const div = document.createElement('div');
+
+    ReactDOM.render(<List
+      key={1}
+      header={'Test Header'}
+      cards={['a','b','c'].map(id => store.allCards[id])}
+    />,
+    div
+    );
+
+    ReactDOM.unmountComponentAtNode(div);
+  });
+
+  it('renders the UI as expected', () => {
+    const tree = renderer.create(<list />).toJSON();
+    expect(tree).toMatchSnapshot();
+    });
+});

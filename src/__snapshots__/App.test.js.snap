@@ -17,3 +17,5 @@ exports[`<Card /> renders this UI as expected 1`] = `
   </p>
 </div>
 `;
+
+exports[`<List /> renders the UI as expected 1`] = `<list />`;
