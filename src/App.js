@@ -25,7 +25,29 @@ class App extends React.Component {
   };
 
   handleAddItem = (listId) => {
-    console.log(listId)
+    const newCard= newRandomCard()
+    // console.log(newCard)
+    const newList= this.state.store.lists.map(e=>{
+      if(e.id===listId){
+        return {
+          ...e,
+          cardIds: [...e.cardIds,newCard.id]
+        };
+      }
+      return e;
+    })
+    // console.log(newList)
+    this.setState( {
+      store:{
+        lists:newList,
+        allCards:{
+          ...this.state.store.allCards,
+          [newCard.id]: newCard
+        }      
+      }
+    })
+    // console.log(this.state.store)
+    // console.log(this.state.store.lists)
   };
 
   handleDeleteItem = (cardId) => {
